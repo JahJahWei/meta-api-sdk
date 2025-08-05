@@ -6,13 +6,13 @@
 package com.meta.v1;
 
 /**
- * Protobuf type {@code meta.v1.DrugDetail}
+ * Protobuf type {@code meta.v1.AnalysisResponse}
  */
 @com.google.protobuf.Generated
-public final class DrugDetail extends
+public final class AnalysisResponse extends
     com.google.protobuf.GeneratedMessage implements
-    // @@protoc_insertion_point(message_implements:meta.v1.DrugDetail)
-    DrugDetailOrBuilder {
+    // @@protoc_insertion_point(message_implements:meta.v1.AnalysisResponse)
+    AnalysisResponseOrBuilder {
 private static final long serialVersionUID = 0L;
   static {
     com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
@@ -21,77 +21,56 @@ private static final long serialVersionUID = 0L;
       /* minor= */ 31,
       /* patch= */ 1,
       /* suffix= */ "",
-      DrugDetail.class.getName());
+      AnalysisResponse.class.getName());
   }
-  // Use DrugDetail.newBuilder() to construct.
-  private DrugDetail(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+  // Use AnalysisResponse.newBuilder() to construct.
+  private AnalysisResponse(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
     super(builder);
   }
-  private DrugDetail() {
-    drugName_ = "";
+  private AnalysisResponse() {
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return com.meta.v1.MetaProto.internal_static_meta_v1_DrugDetail_descriptor;
+    return com.meta.v1.MetaProto.internal_static_meta_v1_AnalysisResponse_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.meta.v1.MetaProto.internal_static_meta_v1_DrugDetail_fieldAccessorTable
+    return com.meta.v1.MetaProto.internal_static_meta_v1_AnalysisResponse_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.meta.v1.DrugDetail.class, com.meta.v1.DrugDetail.Builder.class);
+            com.meta.v1.AnalysisResponse.class, com.meta.v1.AnalysisResponse.Builder.class);
   }
 
-  public static final int DRUGID_FIELD_NUMBER = 1;
-  private int drugId_ = 0;
+  public static final int INBED_FIELD_NUMBER = 1;
+  private int inBed_ = 0;
   /**
-   * <code>int32 drugId = 1 [json_name = "drugId"];</code>
-   * @return The drugId.
+   * <pre>
+   * 入住人数
+   * </pre>
+   *
+   * <code>int32 inBed = 1 [json_name = "inBed"];</code>
+   * @return The inBed.
    */
   @java.lang.Override
-  public int getDrugId() {
-    return drugId_;
+  public int getInBed() {
+    return inBed_;
   }
 
-  public static final int DRUGNAME_FIELD_NUMBER = 2;
-  @SuppressWarnings("serial")
-  private volatile java.lang.Object drugName_ = "";
+  public static final int FREEBED_FIELD_NUMBER = 2;
+  private int freeBed_ = 0;
   /**
-   * <code>string drugName = 2 [json_name = "drugName"];</code>
-   * @return The drugName.
+   * <pre>
+   * 空闲人数
+   * </pre>
+   *
+   * <code>int32 freeBed = 2 [json_name = "freeBed"];</code>
+   * @return The freeBed.
    */
   @java.lang.Override
-  public java.lang.String getDrugName() {
-    java.lang.Object ref = drugName_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      drugName_ = s;
-      return s;
-    }
-  }
-  /**
-   * <code>string drugName = 2 [json_name = "drugName"];</code>
-   * @return The bytes for drugName.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getDrugNameBytes() {
-    java.lang.Object ref = drugName_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      drugName_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
+  public int getFreeBed() {
+    return freeBed_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -108,11 +87,11 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (drugId_ != 0) {
-      output.writeInt32(1, drugId_);
+    if (inBed_ != 0) {
+      output.writeInt32(1, inBed_);
     }
-    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(drugName_)) {
-      com.google.protobuf.GeneratedMessage.writeString(output, 2, drugName_);
+    if (freeBed_ != 0) {
+      output.writeInt32(2, freeBed_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -123,12 +102,13 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (drugId_ != 0) {
+    if (inBed_ != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(1, drugId_);
+        .computeInt32Size(1, inBed_);
     }
-    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(drugName_)) {
-      size += com.google.protobuf.GeneratedMessage.computeStringSize(2, drugName_);
+    if (freeBed_ != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt32Size(2, freeBed_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -140,15 +120,15 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof com.meta.v1.DrugDetail)) {
+    if (!(obj instanceof com.meta.v1.AnalysisResponse)) {
       return super.equals(obj);
     }
-    com.meta.v1.DrugDetail other = (com.meta.v1.DrugDetail) obj;
+    com.meta.v1.AnalysisResponse other = (com.meta.v1.AnalysisResponse) obj;
 
-    if (getDrugId()
-        != other.getDrugId()) return false;
-    if (!getDrugName()
-        .equals(other.getDrugName())) return false;
+    if (getInBed()
+        != other.getInBed()) return false;
+    if (getFreeBed()
+        != other.getFreeBed()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -160,53 +140,53 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + DRUGID_FIELD_NUMBER;
-    hash = (53 * hash) + getDrugId();
-    hash = (37 * hash) + DRUGNAME_FIELD_NUMBER;
-    hash = (53 * hash) + getDrugName().hashCode();
+    hash = (37 * hash) + INBED_FIELD_NUMBER;
+    hash = (53 * hash) + getInBed();
+    hash = (37 * hash) + FREEBED_FIELD_NUMBER;
+    hash = (53 * hash) + getFreeBed();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static com.meta.v1.DrugDetail parseFrom(
+  public static com.meta.v1.AnalysisResponse parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.meta.v1.DrugDetail parseFrom(
+  public static com.meta.v1.AnalysisResponse parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.meta.v1.DrugDetail parseFrom(
+  public static com.meta.v1.AnalysisResponse parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.meta.v1.DrugDetail parseFrom(
+  public static com.meta.v1.AnalysisResponse parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.meta.v1.DrugDetail parseFrom(byte[] data)
+  public static com.meta.v1.AnalysisResponse parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.meta.v1.DrugDetail parseFrom(
+  public static com.meta.v1.AnalysisResponse parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.meta.v1.DrugDetail parseFrom(java.io.InputStream input)
+  public static com.meta.v1.AnalysisResponse parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessage
         .parseWithIOException(PARSER, input);
   }
-  public static com.meta.v1.DrugDetail parseFrom(
+  public static com.meta.v1.AnalysisResponse parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -214,26 +194,26 @@ private static final long serialVersionUID = 0L;
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
-  public static com.meta.v1.DrugDetail parseDelimitedFrom(java.io.InputStream input)
+  public static com.meta.v1.AnalysisResponse parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessage
         .parseDelimitedWithIOException(PARSER, input);
   }
 
-  public static com.meta.v1.DrugDetail parseDelimitedFrom(
+  public static com.meta.v1.AnalysisResponse parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessage
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.meta.v1.DrugDetail parseFrom(
+  public static com.meta.v1.AnalysisResponse parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessage
         .parseWithIOException(PARSER, input);
   }
-  public static com.meta.v1.DrugDetail parseFrom(
+  public static com.meta.v1.AnalysisResponse parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -246,7 +226,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.meta.v1.DrugDetail prototype) {
+  public static Builder newBuilder(com.meta.v1.AnalysisResponse prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -262,26 +242,26 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * Protobuf type {@code meta.v1.DrugDetail}
+   * Protobuf type {@code meta.v1.AnalysisResponse}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessage.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:meta.v1.DrugDetail)
-      com.meta.v1.DrugDetailOrBuilder {
+      // @@protoc_insertion_point(builder_implements:meta.v1.AnalysisResponse)
+      com.meta.v1.AnalysisResponseOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.meta.v1.MetaProto.internal_static_meta_v1_DrugDetail_descriptor;
+      return com.meta.v1.MetaProto.internal_static_meta_v1_AnalysisResponse_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.meta.v1.MetaProto.internal_static_meta_v1_DrugDetail_fieldAccessorTable
+      return com.meta.v1.MetaProto.internal_static_meta_v1_AnalysisResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.meta.v1.DrugDetail.class, com.meta.v1.DrugDetail.Builder.class);
+              com.meta.v1.AnalysisResponse.class, com.meta.v1.AnalysisResponse.Builder.class);
     }
 
-    // Construct using com.meta.v1.DrugDetail.newBuilder()
+    // Construct using com.meta.v1.AnalysisResponse.newBuilder()
     private Builder() {
 
     }
@@ -295,25 +275,25 @@ private static final long serialVersionUID = 0L;
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
-      drugId_ = 0;
-      drugName_ = "";
+      inBed_ = 0;
+      freeBed_ = 0;
       return this;
     }
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return com.meta.v1.MetaProto.internal_static_meta_v1_DrugDetail_descriptor;
+      return com.meta.v1.MetaProto.internal_static_meta_v1_AnalysisResponse_descriptor;
     }
 
     @java.lang.Override
-    public com.meta.v1.DrugDetail getDefaultInstanceForType() {
-      return com.meta.v1.DrugDetail.getDefaultInstance();
+    public com.meta.v1.AnalysisResponse getDefaultInstanceForType() {
+      return com.meta.v1.AnalysisResponse.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.meta.v1.DrugDetail build() {
-      com.meta.v1.DrugDetail result = buildPartial();
+    public com.meta.v1.AnalysisResponse build() {
+      com.meta.v1.AnalysisResponse result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -321,42 +301,40 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.meta.v1.DrugDetail buildPartial() {
-      com.meta.v1.DrugDetail result = new com.meta.v1.DrugDetail(this);
+    public com.meta.v1.AnalysisResponse buildPartial() {
+      com.meta.v1.AnalysisResponse result = new com.meta.v1.AnalysisResponse(this);
       if (bitField0_ != 0) { buildPartial0(result); }
       onBuilt();
       return result;
     }
 
-    private void buildPartial0(com.meta.v1.DrugDetail result) {
+    private void buildPartial0(com.meta.v1.AnalysisResponse result) {
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
-        result.drugId_ = drugId_;
+        result.inBed_ = inBed_;
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
-        result.drugName_ = drugName_;
+        result.freeBed_ = freeBed_;
       }
     }
 
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.meta.v1.DrugDetail) {
-        return mergeFrom((com.meta.v1.DrugDetail)other);
+      if (other instanceof com.meta.v1.AnalysisResponse) {
+        return mergeFrom((com.meta.v1.AnalysisResponse)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.meta.v1.DrugDetail other) {
-      if (other == com.meta.v1.DrugDetail.getDefaultInstance()) return this;
-      if (other.getDrugId() != 0) {
-        setDrugId(other.getDrugId());
+    public Builder mergeFrom(com.meta.v1.AnalysisResponse other) {
+      if (other == com.meta.v1.AnalysisResponse.getDefaultInstance()) return this;
+      if (other.getInBed() != 0) {
+        setInBed(other.getInBed());
       }
-      if (!other.getDrugName().isEmpty()) {
-        drugName_ = other.drugName_;
-        bitField0_ |= 0x00000002;
-        onChanged();
+      if (other.getFreeBed() != 0) {
+        setFreeBed(other.getFreeBed());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -385,15 +363,15 @@ private static final long serialVersionUID = 0L;
               done = true;
               break;
             case 8: {
-              drugId_ = input.readInt32();
+              inBed_ = input.readInt32();
               bitField0_ |= 0x00000001;
               break;
             } // case 8
-            case 18: {
-              drugName_ = input.readStringRequireUtf8();
+            case 16: {
+              freeBed_ = input.readInt32();
               bitField0_ |= 0x00000002;
               break;
-            } // case 18
+            } // case 16
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -411,127 +389,111 @@ private static final long serialVersionUID = 0L;
     }
     private int bitField0_;
 
-    private int drugId_ ;
+    private int inBed_ ;
     /**
-     * <code>int32 drugId = 1 [json_name = "drugId"];</code>
-     * @return The drugId.
+     * <pre>
+     * 入住人数
+     * </pre>
+     *
+     * <code>int32 inBed = 1 [json_name = "inBed"];</code>
+     * @return The inBed.
      */
     @java.lang.Override
-    public int getDrugId() {
-      return drugId_;
+    public int getInBed() {
+      return inBed_;
     }
     /**
-     * <code>int32 drugId = 1 [json_name = "drugId"];</code>
-     * @param value The drugId to set.
+     * <pre>
+     * 入住人数
+     * </pre>
+     *
+     * <code>int32 inBed = 1 [json_name = "inBed"];</code>
+     * @param value The inBed to set.
      * @return This builder for chaining.
      */
-    public Builder setDrugId(int value) {
+    public Builder setInBed(int value) {
 
-      drugId_ = value;
+      inBed_ = value;
       bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
     /**
-     * <code>int32 drugId = 1 [json_name = "drugId"];</code>
+     * <pre>
+     * 入住人数
+     * </pre>
+     *
+     * <code>int32 inBed = 1 [json_name = "inBed"];</code>
      * @return This builder for chaining.
      */
-    public Builder clearDrugId() {
+    public Builder clearInBed() {
       bitField0_ = (bitField0_ & ~0x00000001);
-      drugId_ = 0;
+      inBed_ = 0;
       onChanged();
       return this;
     }
 
-    private java.lang.Object drugName_ = "";
+    private int freeBed_ ;
     /**
-     * <code>string drugName = 2 [json_name = "drugName"];</code>
-     * @return The drugName.
+     * <pre>
+     * 空闲人数
+     * </pre>
+     *
+     * <code>int32 freeBed = 2 [json_name = "freeBed"];</code>
+     * @return The freeBed.
      */
-    public java.lang.String getDrugName() {
-      java.lang.Object ref = drugName_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        drugName_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
+    @java.lang.Override
+    public int getFreeBed() {
+      return freeBed_;
     }
     /**
-     * <code>string drugName = 2 [json_name = "drugName"];</code>
-     * @return The bytes for drugName.
-     */
-    public com.google.protobuf.ByteString
-        getDrugNameBytes() {
-      java.lang.Object ref = drugName_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        drugName_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <code>string drugName = 2 [json_name = "drugName"];</code>
-     * @param value The drugName to set.
+     * <pre>
+     * 空闲人数
+     * </pre>
+     *
+     * <code>int32 freeBed = 2 [json_name = "freeBed"];</code>
+     * @param value The freeBed to set.
      * @return This builder for chaining.
      */
-    public Builder setDrugName(
-        java.lang.String value) {
-      if (value == null) { throw new NullPointerException(); }
-      drugName_ = value;
+    public Builder setFreeBed(int value) {
+
+      freeBed_ = value;
       bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
     /**
-     * <code>string drugName = 2 [json_name = "drugName"];</code>
+     * <pre>
+     * 空闲人数
+     * </pre>
+     *
+     * <code>int32 freeBed = 2 [json_name = "freeBed"];</code>
      * @return This builder for chaining.
      */
-    public Builder clearDrugName() {
-      drugName_ = getDefaultInstance().getDrugName();
+    public Builder clearFreeBed() {
       bitField0_ = (bitField0_ & ~0x00000002);
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string drugName = 2 [json_name = "drugName"];</code>
-     * @param value The bytes for drugName to set.
-     * @return This builder for chaining.
-     */
-    public Builder setDrugNameBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) { throw new NullPointerException(); }
-      checkByteStringIsUtf8(value);
-      drugName_ = value;
-      bitField0_ |= 0x00000002;
+      freeBed_ = 0;
       onChanged();
       return this;
     }
 
-    // @@protoc_insertion_point(builder_scope:meta.v1.DrugDetail)
+    // @@protoc_insertion_point(builder_scope:meta.v1.AnalysisResponse)
   }
 
-  // @@protoc_insertion_point(class_scope:meta.v1.DrugDetail)
-  private static final com.meta.v1.DrugDetail DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:meta.v1.AnalysisResponse)
+  private static final com.meta.v1.AnalysisResponse DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new com.meta.v1.DrugDetail();
+    DEFAULT_INSTANCE = new com.meta.v1.AnalysisResponse();
   }
 
-  public static com.meta.v1.DrugDetail getDefaultInstance() {
+  public static com.meta.v1.AnalysisResponse getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<DrugDetail>
-      PARSER = new com.google.protobuf.AbstractParser<DrugDetail>() {
+  private static final com.google.protobuf.Parser<AnalysisResponse>
+      PARSER = new com.google.protobuf.AbstractParser<AnalysisResponse>() {
     @java.lang.Override
-    public DrugDetail parsePartialFrom(
+    public AnalysisResponse parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -550,17 +512,17 @@ private static final long serialVersionUID = 0L;
     }
   };
 
-  public static com.google.protobuf.Parser<DrugDetail> parser() {
+  public static com.google.protobuf.Parser<AnalysisResponse> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<DrugDetail> getParserForType() {
+  public com.google.protobuf.Parser<AnalysisResponse> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.meta.v1.DrugDetail getDefaultInstanceForType() {
+  public com.meta.v1.AnalysisResponse getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

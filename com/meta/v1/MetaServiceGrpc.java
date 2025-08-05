@@ -105,6 +105,37 @@ public final class MetaServiceGrpc {
     return getGetAlertsMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.meta.v1.AnalysisRequest,
+      com.meta.v1.AnalysisResponse> getAnalysisMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "Analysis",
+      requestType = com.meta.v1.AnalysisRequest.class,
+      responseType = com.meta.v1.AnalysisResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.meta.v1.AnalysisRequest,
+      com.meta.v1.AnalysisResponse> getAnalysisMethod() {
+    io.grpc.MethodDescriptor<com.meta.v1.AnalysisRequest, com.meta.v1.AnalysisResponse> getAnalysisMethod;
+    if ((getAnalysisMethod = MetaServiceGrpc.getAnalysisMethod) == null) {
+      synchronized (MetaServiceGrpc.class) {
+        if ((getAnalysisMethod = MetaServiceGrpc.getAnalysisMethod) == null) {
+          MetaServiceGrpc.getAnalysisMethod = getAnalysisMethod =
+              io.grpc.MethodDescriptor.<com.meta.v1.AnalysisRequest, com.meta.v1.AnalysisResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "Analysis"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.meta.v1.AnalysisRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.meta.v1.AnalysisResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new MetaServiceMethodDescriptorSupplier("Analysis"))
+              .build();
+        }
+      }
+    }
+    return getAnalysisMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<com.meta.v1.GetInfusionDevicesRequest,
       com.meta.v1.GetInfusionDevicesResponse> getGetInfusionDevicesMethod;
 
@@ -227,6 +258,13 @@ public final class MetaServiceGrpc {
     }
 
     /**
+     */
+    default void analysis(com.meta.v1.AnalysisRequest request,
+        io.grpc.stub.StreamObserver<com.meta.v1.AnalysisResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getAnalysisMethod(), responseObserver);
+    }
+
+    /**
      * <pre>
      * 输液管理
      * </pre>
@@ -295,6 +333,14 @@ public final class MetaServiceGrpc {
     }
 
     /**
+     */
+    public void analysis(com.meta.v1.AnalysisRequest request,
+        io.grpc.stub.StreamObserver<com.meta.v1.AnalysisResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getAnalysisMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
      * <pre>
      * 输液管理
      * </pre>
@@ -350,6 +396,13 @@ public final class MetaServiceGrpc {
     }
 
     /**
+     */
+    public com.meta.v1.AnalysisResponse analysis(com.meta.v1.AnalysisRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getAnalysisMethod(), getCallOptions(), request);
+    }
+
+    /**
      * <pre>
      * 输液管理
      * </pre>
@@ -401,6 +454,13 @@ public final class MetaServiceGrpc {
     public com.meta.v1.GetAlertsResponse getAlerts(com.meta.v1.GetAlertsRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetAlertsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.meta.v1.AnalysisResponse analysis(com.meta.v1.AnalysisRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getAnalysisMethod(), getCallOptions(), request);
     }
 
     /**
@@ -461,6 +521,14 @@ public final class MetaServiceGrpc {
     }
 
     /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.meta.v1.AnalysisResponse> analysis(
+        com.meta.v1.AnalysisRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getAnalysisMethod(), getCallOptions()), request);
+    }
+
+    /**
      * <pre>
      * 输液管理
      * </pre>
@@ -475,7 +543,8 @@ public final class MetaServiceGrpc {
   private static final int METHODID_GET_USER = 0;
   private static final int METHODID_GET_BEDS = 1;
   private static final int METHODID_GET_ALERTS = 2;
-  private static final int METHODID_GET_INFUSION_DEVICES = 3;
+  private static final int METHODID_ANALYSIS = 3;
+  private static final int METHODID_GET_INFUSION_DEVICES = 4;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -505,6 +574,10 @@ public final class MetaServiceGrpc {
         case METHODID_GET_ALERTS:
           serviceImpl.getAlerts((com.meta.v1.GetAlertsRequest) request,
               (io.grpc.stub.StreamObserver<com.meta.v1.GetAlertsResponse>) responseObserver);
+          break;
+        case METHODID_ANALYSIS:
+          serviceImpl.analysis((com.meta.v1.AnalysisRequest) request,
+              (io.grpc.stub.StreamObserver<com.meta.v1.AnalysisResponse>) responseObserver);
           break;
         case METHODID_GET_INFUSION_DEVICES:
           serviceImpl.getInfusionDevices((com.meta.v1.GetInfusionDevicesRequest) request,
@@ -549,6 +622,13 @@ public final class MetaServiceGrpc {
               com.meta.v1.GetAlertsRequest,
               com.meta.v1.GetAlertsResponse>(
                 service, METHODID_GET_ALERTS)))
+        .addMethod(
+          getAnalysisMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.meta.v1.AnalysisRequest,
+              com.meta.v1.AnalysisResponse>(
+                service, METHODID_ANALYSIS)))
         .addMethod(
           getGetInfusionDevicesMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -607,6 +687,7 @@ public final class MetaServiceGrpc {
               .addMethod(getGetUserMethod())
               .addMethod(getGetBedsMethod())
               .addMethod(getGetAlertsMethod())
+              .addMethod(getAnalysisMethod())
               .addMethod(getGetInfusionDevicesMethod())
               .build();
         }

@@ -6,13 +6,13 @@
 package com.meta.v1;
 
 @com.google.protobuf.Generated
-public interface GetUserRequestOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:meta.v1.GetUserRequest)
+public interface AnalysisRequestOrBuilder extends
+    // @@protoc_insertion_point(interface_extends:meta.v1.AnalysisRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>int32 userId = 1 [json_name = "userId"];</code>
-   * @return The userId.
+   * <code>int32 deptId = 1 [json_name = "deptId"];</code>
+   * @return The deptId.
    */
-  int getUserId();
+  int getDeptId();
 }
