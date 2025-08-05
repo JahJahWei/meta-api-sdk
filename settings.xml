@@ -19,7 +19,7 @@
                 <repository>
                     <id>github</id>
                     <name>GitHub Packages</name>
-                    <url>https://maven.pkg.github.com/JahJahWei/meta-api-sdk</url>
+                    <url>https://maven.pkg.github.com/JahJahWei/meta-api-sdk-java</url>
                 </repository>
             </repositories>
         </profile>

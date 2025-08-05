@@ -5,14 +5,14 @@
          http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.edge-sight</groupId>
-    <artifactId>meta-api-sdk</artifactId>
+    <groupId>com.meta.v1</groupId>
+    <artifactId>meta-api-sdk-java</artifactId>
     <version>1.0.0</version>
     <packaging>jar</packaging>
 
     <name>Meta API Java SDK</name>
     <description>Java SDK for Meta API</description>
-    <url>https://github.com/jahjahWei/meta-api-sdk</url>
+    <url>https://github.com/jahjahWei/meta-api-sdk-java</url>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
@@ -112,7 +112,7 @@
         <repository>
             <id>github</id>
             <name>GitHub Packages</name>
-            <url>https://maven.pkg.github.com/jahjahWei/meta-api-sdk</url>
+            <url>https://maven.pkg.github.com/jahjahWei/meta-api-sdk-java</url>
         </repository>
     </distributionManagement>
 </project> 
