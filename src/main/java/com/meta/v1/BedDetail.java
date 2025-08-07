@@ -29,10 +29,10 @@ private static final long serialVersionUID = 0L;
   }
   private BedDetail() {
     bedNo_ = "";
+    deviceNo_ = "";
     patientName_ = "";
     patientGender_ = "";
     disease_ = "";
-    status_ = "";
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor
@@ -98,11 +98,50 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int PATIENTNAME_FIELD_NUMBER = 3;
+  public static final int DEVICENO_FIELD_NUMBER = 3;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object deviceNo_ = "";
+  /**
+   * <code>string deviceNo = 3 [json_name = "deviceNo"];</code>
+   * @return The deviceNo.
+   */
+  @java.lang.Override
+  public java.lang.String getDeviceNo() {
+    java.lang.Object ref = deviceNo_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      deviceNo_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string deviceNo = 3 [json_name = "deviceNo"];</code>
+   * @return The bytes for deviceNo.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getDeviceNoBytes() {
+    java.lang.Object ref = deviceNo_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      deviceNo_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int PATIENTNAME_FIELD_NUMBER = 4;
   @SuppressWarnings("serial")
   private volatile java.lang.Object patientName_ = "";
   /**
-   * <code>string patientName = 3 [json_name = "patientName"];</code>
+   * <code>string patientName = 4 [json_name = "patientName"];</code>
    * @return The patientName.
    */
   @java.lang.Override
@@ -119,7 +158,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string patientName = 3 [json_name = "patientName"];</code>
+   * <code>string patientName = 4 [json_name = "patientName"];</code>
    * @return The bytes for patientName.
    */
   @java.lang.Override
@@ -137,11 +176,11 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int PATIENTGENDER_FIELD_NUMBER = 4;
+  public static final int PATIENTGENDER_FIELD_NUMBER = 5;
   @SuppressWarnings("serial")
   private volatile java.lang.Object patientGender_ = "";
   /**
-   * <code>string patientGender = 4 [json_name = "patientGender"];</code>
+   * <code>string patientGender = 5 [json_name = "patientGender"];</code>
    * @return The patientGender.
    */
   @java.lang.Override
@@ -158,7 +197,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string patientGender = 4 [json_name = "patientGender"];</code>
+   * <code>string patientGender = 5 [json_name = "patientGender"];</code>
    * @return The bytes for patientGender.
    */
   @java.lang.Override
@@ -176,10 +215,10 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int PATIENTAGE_FIELD_NUMBER = 5;
+  public static final int PATIENTAGE_FIELD_NUMBER = 6;
   private int patientAge_ = 0;
   /**
-   * <code>int32 patientAge = 5 [json_name = "patientAge"];</code>
+   * <code>int32 patientAge = 6 [json_name = "patientAge"];</code>
    * @return The patientAge.
    */
   @java.lang.Override
@@ -187,11 +226,11 @@ private static final long serialVersionUID = 0L;
     return patientAge_;
   }
 
-  public static final int DISEASE_FIELD_NUMBER = 6;
+  public static final int DISEASE_FIELD_NUMBER = 7;
   @SuppressWarnings("serial")
   private volatile java.lang.Object disease_ = "";
   /**
-   * <code>string disease = 6 [json_name = "disease"];</code>
+   * <code>string disease = 7 [json_name = "disease"];</code>
    * @return The disease.
    */
   @java.lang.Override
@@ -208,7 +247,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string disease = 6 [json_name = "disease"];</code>
+   * <code>string disease = 7 [json_name = "disease"];</code>
    * @return The bytes for disease.
    */
   @java.lang.Override
@@ -220,45 +259,6 @@ private static final long serialVersionUID = 0L;
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
       disease_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int STATUS_FIELD_NUMBER = 7;
-  @SuppressWarnings("serial")
-  private volatile java.lang.Object status_ = "";
-  /**
-   * <code>string status = 7 [json_name = "status"];</code>
-   * @return The status.
-   */
-  @java.lang.Override
-  public java.lang.String getStatus() {
-    java.lang.Object ref = status_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      status_ = s;
-      return s;
-    }
-  }
-  /**
-   * <code>string status = 7 [json_name = "status"];</code>
-   * @return The bytes for status.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getStatusBytes() {
-    java.lang.Object ref = status_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      status_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -285,20 +285,20 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(bedNo_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 2, bedNo_);
     }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(deviceNo_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 3, deviceNo_);
+    }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(patientName_)) {
-      com.google.protobuf.GeneratedMessage.writeString(output, 3, patientName_);
+      com.google.protobuf.GeneratedMessage.writeString(output, 4, patientName_);
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(patientGender_)) {
-      com.google.protobuf.GeneratedMessage.writeString(output, 4, patientGender_);
+      com.google.protobuf.GeneratedMessage.writeString(output, 5, patientGender_);
     }
     if (patientAge_ != 0) {
-      output.writeInt32(5, patientAge_);
+      output.writeInt32(6, patientAge_);
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(disease_)) {
-      com.google.protobuf.GeneratedMessage.writeString(output, 6, disease_);
-    }
-    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(status_)) {
-      com.google.protobuf.GeneratedMessage.writeString(output, 7, status_);
+      com.google.protobuf.GeneratedMessage.writeString(output, 7, disease_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -316,21 +316,21 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(bedNo_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(2, bedNo_);
     }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(deviceNo_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(3, deviceNo_);
+    }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(patientName_)) {
-      size += com.google.protobuf.GeneratedMessage.computeStringSize(3, patientName_);
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(4, patientName_);
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(patientGender_)) {
-      size += com.google.protobuf.GeneratedMessage.computeStringSize(4, patientGender_);
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(5, patientGender_);
     }
     if (patientAge_ != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(5, patientAge_);
+        .computeInt32Size(6, patientAge_);
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(disease_)) {
-      size += com.google.protobuf.GeneratedMessage.computeStringSize(6, disease_);
-    }
-    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(status_)) {
-      size += com.google.protobuf.GeneratedMessage.computeStringSize(7, status_);
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(7, disease_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -351,6 +351,8 @@ private static final long serialVersionUID = 0L;
         != other.getBedId()) return false;
     if (!getBedNo()
         .equals(other.getBedNo())) return false;
+    if (!getDeviceNo()
+        .equals(other.getDeviceNo())) return false;
     if (!getPatientName()
         .equals(other.getPatientName())) return false;
     if (!getPatientGender()
@@ -359,8 +361,6 @@ private static final long serialVersionUID = 0L;
         != other.getPatientAge()) return false;
     if (!getDisease()
         .equals(other.getDisease())) return false;
-    if (!getStatus()
-        .equals(other.getStatus())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -376,6 +376,8 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getBedId();
     hash = (37 * hash) + BEDNO_FIELD_NUMBER;
     hash = (53 * hash) + getBedNo().hashCode();
+    hash = (37 * hash) + DEVICENO_FIELD_NUMBER;
+    hash = (53 * hash) + getDeviceNo().hashCode();
     hash = (37 * hash) + PATIENTNAME_FIELD_NUMBER;
     hash = (53 * hash) + getPatientName().hashCode();
     hash = (37 * hash) + PATIENTGENDER_FIELD_NUMBER;
@@ -384,8 +386,6 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getPatientAge();
     hash = (37 * hash) + DISEASE_FIELD_NUMBER;
     hash = (53 * hash) + getDisease().hashCode();
-    hash = (37 * hash) + STATUS_FIELD_NUMBER;
-    hash = (53 * hash) + getStatus().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -519,11 +519,11 @@ private static final long serialVersionUID = 0L;
       bitField0_ = 0;
       bedId_ = 0;
       bedNo_ = "";
+      deviceNo_ = "";
       patientName_ = "";
       patientGender_ = "";
       patientAge_ = 0;
       disease_ = "";
-      status_ = "";
       return this;
     }
 
@@ -564,19 +564,19 @@ private static final long serialVersionUID = 0L;
         result.bedNo_ = bedNo_;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
-        result.patientName_ = patientName_;
+        result.deviceNo_ = deviceNo_;
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
-        result.patientGender_ = patientGender_;
+        result.patientName_ = patientName_;
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
-        result.patientAge_ = patientAge_;
+        result.patientGender_ = patientGender_;
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
-        result.disease_ = disease_;
+        result.patientAge_ = patientAge_;
       }
       if (((from_bitField0_ & 0x00000040) != 0)) {
-        result.status_ = status_;
+        result.disease_ = disease_;
       }
     }
 
@@ -600,14 +600,19 @@ private static final long serialVersionUID = 0L;
         bitField0_ |= 0x00000002;
         onChanged();
       }
+      if (!other.getDeviceNo().isEmpty()) {
+        deviceNo_ = other.deviceNo_;
+        bitField0_ |= 0x00000004;
+        onChanged();
+      }
       if (!other.getPatientName().isEmpty()) {
         patientName_ = other.patientName_;
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (!other.getPatientGender().isEmpty()) {
         patientGender_ = other.patientGender_;
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (other.getPatientAge() != 0) {
@@ -615,11 +620,6 @@ private static final long serialVersionUID = 0L;
       }
       if (!other.getDisease().isEmpty()) {
         disease_ = other.disease_;
-        bitField0_ |= 0x00000020;
-        onChanged();
-      }
-      if (!other.getStatus().isEmpty()) {
-        status_ = other.status_;
         bitField0_ |= 0x00000040;
         onChanged();
       }
@@ -660,27 +660,27 @@ private static final long serialVersionUID = 0L;
               break;
             } // case 18
             case 26: {
-              patientName_ = input.readStringRequireUtf8();
+              deviceNo_ = input.readStringRequireUtf8();
               bitField0_ |= 0x00000004;
               break;
             } // case 26
             case 34: {
-              patientGender_ = input.readStringRequireUtf8();
+              patientName_ = input.readStringRequireUtf8();
               bitField0_ |= 0x00000008;
               break;
             } // case 34
-            case 40: {
-              patientAge_ = input.readInt32();
+            case 42: {
+              patientGender_ = input.readStringRequireUtf8();
               bitField0_ |= 0x00000010;
               break;
-            } // case 40
-            case 50: {
-              disease_ = input.readStringRequireUtf8();
+            } // case 42
+            case 48: {
+              patientAge_ = input.readInt32();
               bitField0_ |= 0x00000020;
               break;
-            } // case 50
+            } // case 48
             case 58: {
-              status_ = input.readStringRequireUtf8();
+              disease_ = input.readStringRequireUtf8();
               bitField0_ |= 0x00000040;
               break;
             } // case 58
@@ -805,9 +805,81 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private java.lang.Object deviceNo_ = "";
+    /**
+     * <code>string deviceNo = 3 [json_name = "deviceNo"];</code>
+     * @return The deviceNo.
+     */
+    public java.lang.String getDeviceNo() {
+      java.lang.Object ref = deviceNo_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        deviceNo_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string deviceNo = 3 [json_name = "deviceNo"];</code>
+     * @return The bytes for deviceNo.
+     */
+    public com.google.protobuf.ByteString
+        getDeviceNoBytes() {
+      java.lang.Object ref = deviceNo_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        deviceNo_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string deviceNo = 3 [json_name = "deviceNo"];</code>
+     * @param value The deviceNo to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDeviceNo(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      deviceNo_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string deviceNo = 3 [json_name = "deviceNo"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearDeviceNo() {
+      deviceNo_ = getDefaultInstance().getDeviceNo();
+      bitField0_ = (bitField0_ & ~0x00000004);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string deviceNo = 3 [json_name = "deviceNo"];</code>
+     * @param value The bytes for deviceNo to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDeviceNoBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      deviceNo_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object patientName_ = "";
     /**
-     * <code>string patientName = 3 [json_name = "patientName"];</code>
+     * <code>string patientName = 4 [json_name = "patientName"];</code>
      * @return The patientName.
      */
     public java.lang.String getPatientName() {
@@ -823,7 +895,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string patientName = 3 [json_name = "patientName"];</code>
+     * <code>string patientName = 4 [json_name = "patientName"];</code>
      * @return The bytes for patientName.
      */
     public com.google.protobuf.ByteString
@@ -840,7 +912,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string patientName = 3 [json_name = "patientName"];</code>
+     * <code>string patientName = 4 [json_name = "patientName"];</code>
      * @param value The patientName to set.
      * @return This builder for chaining.
      */
@@ -848,22 +920,22 @@ private static final long serialVersionUID = 0L;
         java.lang.String value) {
       if (value == null) { throw new NullPointerException(); }
       patientName_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
     /**
-     * <code>string patientName = 3 [json_name = "patientName"];</code>
+     * <code>string patientName = 4 [json_name = "patientName"];</code>
      * @return This builder for chaining.
      */
     public Builder clearPatientName() {
       patientName_ = getDefaultInstance().getPatientName();
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
     /**
-     * <code>string patientName = 3 [json_name = "patientName"];</code>
+     * <code>string patientName = 4 [json_name = "patientName"];</code>
      * @param value The bytes for patientName to set.
      * @return This builder for chaining.
      */
@@ -872,14 +944,14 @@ private static final long serialVersionUID = 0L;
       if (value == null) { throw new NullPointerException(); }
       checkByteStringIsUtf8(value);
       patientName_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
 
     private java.lang.Object patientGender_ = "";
     /**
-     * <code>string patientGender = 4 [json_name = "patientGender"];</code>
+     * <code>string patientGender = 5 [json_name = "patientGender"];</code>
      * @return The patientGender.
      */
     public java.lang.String getPatientGender() {
@@ -895,7 +967,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string patientGender = 4 [json_name = "patientGender"];</code>
+     * <code>string patientGender = 5 [json_name = "patientGender"];</code>
      * @return The bytes for patientGender.
      */
     public com.google.protobuf.ByteString
@@ -912,7 +984,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string patientGender = 4 [json_name = "patientGender"];</code>
+     * <code>string patientGender = 5 [json_name = "patientGender"];</code>
      * @param value The patientGender to set.
      * @return This builder for chaining.
      */
@@ -920,22 +992,22 @@ private static final long serialVersionUID = 0L;
         java.lang.String value) {
       if (value == null) { throw new NullPointerException(); }
       patientGender_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
     /**
-     * <code>string patientGender = 4 [json_name = "patientGender"];</code>
+     * <code>string patientGender = 5 [json_name = "patientGender"];</code>
      * @return This builder for chaining.
      */
     public Builder clearPatientGender() {
       patientGender_ = getDefaultInstance().getPatientGender();
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
     /**
-     * <code>string patientGender = 4 [json_name = "patientGender"];</code>
+     * <code>string patientGender = 5 [json_name = "patientGender"];</code>
      * @param value The bytes for patientGender to set.
      * @return This builder for chaining.
      */
@@ -944,14 +1016,14 @@ private static final long serialVersionUID = 0L;
       if (value == null) { throw new NullPointerException(); }
       checkByteStringIsUtf8(value);
       patientGender_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
 
     private int patientAge_ ;
     /**
-     * <code>int32 patientAge = 5 [json_name = "patientAge"];</code>
+     * <code>int32 patientAge = 6 [json_name = "patientAge"];</code>
      * @return The patientAge.
      */
     @java.lang.Override
@@ -959,23 +1031,23 @@ private static final long serialVersionUID = 0L;
       return patientAge_;
     }
     /**
-     * <code>int32 patientAge = 5 [json_name = "patientAge"];</code>
+     * <code>int32 patientAge = 6 [json_name = "patientAge"];</code>
      * @param value The patientAge to set.
      * @return This builder for chaining.
      */
     public Builder setPatientAge(int value) {
 
       patientAge_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
     /**
-     * <code>int32 patientAge = 5 [json_name = "patientAge"];</code>
+     * <code>int32 patientAge = 6 [json_name = "patientAge"];</code>
      * @return This builder for chaining.
      */
     public Builder clearPatientAge() {
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       patientAge_ = 0;
       onChanged();
       return this;
@@ -983,7 +1055,7 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object disease_ = "";
     /**
-     * <code>string disease = 6 [json_name = "disease"];</code>
+     * <code>string disease = 7 [json_name = "disease"];</code>
      * @return The disease.
      */
     public java.lang.String getDisease() {
@@ -999,7 +1071,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string disease = 6 [json_name = "disease"];</code>
+     * <code>string disease = 7 [json_name = "disease"];</code>
      * @return The bytes for disease.
      */
     public com.google.protobuf.ByteString
@@ -1016,7 +1088,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string disease = 6 [json_name = "disease"];</code>
+     * <code>string disease = 7 [json_name = "disease"];</code>
      * @param value The disease to set.
      * @return This builder for chaining.
      */
@@ -1024,22 +1096,22 @@ private static final long serialVersionUID = 0L;
         java.lang.String value) {
       if (value == null) { throw new NullPointerException(); }
       disease_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
     /**
-     * <code>string disease = 6 [json_name = "disease"];</code>
+     * <code>string disease = 7 [json_name = "disease"];</code>
      * @return This builder for chaining.
      */
     public Builder clearDisease() {
       disease_ = getDefaultInstance().getDisease();
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
     /**
-     * <code>string disease = 6 [json_name = "disease"];</code>
+     * <code>string disease = 7 [json_name = "disease"];</code>
      * @param value The bytes for disease to set.
      * @return This builder for chaining.
      */
@@ -1048,78 +1120,6 @@ private static final long serialVersionUID = 0L;
       if (value == null) { throw new NullPointerException(); }
       checkByteStringIsUtf8(value);
       disease_ = value;
-      bitField0_ |= 0x00000020;
-      onChanged();
-      return this;
-    }
-
-    private java.lang.Object status_ = "";
-    /**
-     * <code>string status = 7 [json_name = "status"];</code>
-     * @return The status.
-     */
-    public java.lang.String getStatus() {
-      java.lang.Object ref = status_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        status_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <code>string status = 7 [json_name = "status"];</code>
-     * @return The bytes for status.
-     */
-    public com.google.protobuf.ByteString
-        getStatusBytes() {
-      java.lang.Object ref = status_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        status_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <code>string status = 7 [json_name = "status"];</code>
-     * @param value The status to set.
-     * @return This builder for chaining.
-     */
-    public Builder setStatus(
-        java.lang.String value) {
-      if (value == null) { throw new NullPointerException(); }
-      status_ = value;
-      bitField0_ |= 0x00000040;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string status = 7 [json_name = "status"];</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearStatus() {
-      status_ = getDefaultInstance().getStatus();
-      bitField0_ = (bitField0_ & ~0x00000040);
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string status = 7 [json_name = "status"];</code>
-     * @param value The bytes for status to set.
-     * @return This builder for chaining.
-     */
-    public Builder setStatusBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) { throw new NullPointerException(); }
-      checkByteStringIsUtf8(value);
-      status_ = value;
       bitField0_ |= 0x00000040;
       onChanged();
       return this;

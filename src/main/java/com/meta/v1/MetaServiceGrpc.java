@@ -74,37 +74,6 @@ public final class MetaServiceGrpc {
     return getGetBedsMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<com.meta.v1.GetAlertsRequest,
-      com.meta.v1.GetAlertsResponse> getGetAlertsMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "GetAlerts",
-      requestType = com.meta.v1.GetAlertsRequest.class,
-      responseType = com.meta.v1.GetAlertsResponse.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.meta.v1.GetAlertsRequest,
-      com.meta.v1.GetAlertsResponse> getGetAlertsMethod() {
-    io.grpc.MethodDescriptor<com.meta.v1.GetAlertsRequest, com.meta.v1.GetAlertsResponse> getGetAlertsMethod;
-    if ((getGetAlertsMethod = MetaServiceGrpc.getGetAlertsMethod) == null) {
-      synchronized (MetaServiceGrpc.class) {
-        if ((getGetAlertsMethod = MetaServiceGrpc.getGetAlertsMethod) == null) {
-          MetaServiceGrpc.getGetAlertsMethod = getGetAlertsMethod =
-              io.grpc.MethodDescriptor.<com.meta.v1.GetAlertsRequest, com.meta.v1.GetAlertsResponse>newBuilder()
-              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetAlerts"))
-              .setSampledToLocalTracing(true)
-              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.meta.v1.GetAlertsRequest.getDefaultInstance()))
-              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.meta.v1.GetAlertsResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new MetaServiceMethodDescriptorSupplier("GetAlerts"))
-              .build();
-        }
-      }
-    }
-    return getGetAlertsMethod;
-  }
-
   private static volatile io.grpc.MethodDescriptor<com.meta.v1.AnalysisRequest,
       com.meta.v1.AnalysisResponse> getAnalysisMethod;
 
@@ -252,13 +221,6 @@ public final class MetaServiceGrpc {
 
     /**
      */
-    default void getAlerts(com.meta.v1.GetAlertsRequest request,
-        io.grpc.stub.StreamObserver<com.meta.v1.GetAlertsResponse> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetAlertsMethod(), responseObserver);
-    }
-
-    /**
-     */
     default void analysis(com.meta.v1.AnalysisRequest request,
         io.grpc.stub.StreamObserver<com.meta.v1.AnalysisResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getAnalysisMethod(), responseObserver);
@@ -326,14 +288,6 @@ public final class MetaServiceGrpc {
 
     /**
      */
-    public void getAlerts(com.meta.v1.GetAlertsRequest request,
-        io.grpc.stub.StreamObserver<com.meta.v1.GetAlertsResponse> responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getGetAlertsMethod(), getCallOptions()), request, responseObserver);
-    }
-
-    /**
-     */
     public void analysis(com.meta.v1.AnalysisRequest request,
         io.grpc.stub.StreamObserver<com.meta.v1.AnalysisResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
@@ -390,13 +344,6 @@ public final class MetaServiceGrpc {
 
     /**
      */
-    public com.meta.v1.GetAlertsResponse getAlerts(com.meta.v1.GetAlertsRequest request) throws io.grpc.StatusException {
-      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
-          getChannel(), getGetAlertsMethod(), getCallOptions(), request);
-    }
-
-    /**
-     */
     public com.meta.v1.AnalysisResponse analysis(com.meta.v1.AnalysisRequest request) throws io.grpc.StatusException {
       return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getAnalysisMethod(), getCallOptions(), request);
@@ -447,13 +394,6 @@ public final class MetaServiceGrpc {
     public com.meta.v1.GetBedsResponse getBeds(com.meta.v1.GetBedsRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetBedsMethod(), getCallOptions(), request);
-    }
-
-    /**
-     */
-    public com.meta.v1.GetAlertsResponse getAlerts(com.meta.v1.GetAlertsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getGetAlertsMethod(), getCallOptions(), request);
     }
 
     /**
@@ -514,14 +454,6 @@ public final class MetaServiceGrpc {
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<com.meta.v1.GetAlertsResponse> getAlerts(
-        com.meta.v1.GetAlertsRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getGetAlertsMethod(), getCallOptions()), request);
-    }
-
-    /**
-     */
     public com.google.common.util.concurrent.ListenableFuture<com.meta.v1.AnalysisResponse> analysis(
         com.meta.v1.AnalysisRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
@@ -542,9 +474,8 @@ public final class MetaServiceGrpc {
 
   private static final int METHODID_GET_USER = 0;
   private static final int METHODID_GET_BEDS = 1;
-  private static final int METHODID_GET_ALERTS = 2;
-  private static final int METHODID_ANALYSIS = 3;
-  private static final int METHODID_GET_INFUSION_DEVICES = 4;
+  private static final int METHODID_ANALYSIS = 2;
+  private static final int METHODID_GET_INFUSION_DEVICES = 3;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -570,10 +501,6 @@ public final class MetaServiceGrpc {
         case METHODID_GET_BEDS:
           serviceImpl.getBeds((com.meta.v1.GetBedsRequest) request,
               (io.grpc.stub.StreamObserver<com.meta.v1.GetBedsResponse>) responseObserver);
-          break;
-        case METHODID_GET_ALERTS:
-          serviceImpl.getAlerts((com.meta.v1.GetAlertsRequest) request,
-              (io.grpc.stub.StreamObserver<com.meta.v1.GetAlertsResponse>) responseObserver);
           break;
         case METHODID_ANALYSIS:
           serviceImpl.analysis((com.meta.v1.AnalysisRequest) request,
@@ -615,13 +542,6 @@ public final class MetaServiceGrpc {
               com.meta.v1.GetBedsRequest,
               com.meta.v1.GetBedsResponse>(
                 service, METHODID_GET_BEDS)))
-        .addMethod(
-          getGetAlertsMethod(),
-          io.grpc.stub.ServerCalls.asyncUnaryCall(
-            new MethodHandlers<
-              com.meta.v1.GetAlertsRequest,
-              com.meta.v1.GetAlertsResponse>(
-                service, METHODID_GET_ALERTS)))
         .addMethod(
           getAnalysisMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -686,7 +606,6 @@ public final class MetaServiceGrpc {
               .setSchemaDescriptor(new MetaServiceFileDescriptorSupplier())
               .addMethod(getGetUserMethod())
               .addMethod(getGetBedsMethod())
-              .addMethod(getGetAlertsMethod())
               .addMethod(getAnalysisMethod())
               .addMethod(getGetInfusionDevicesMethod())
               .build();

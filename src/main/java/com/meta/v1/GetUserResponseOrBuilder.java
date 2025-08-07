@@ -11,17 +11,32 @@ public interface GetUserResponseOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>.meta.v1.UserDetail user = 1 [json_name = "user"];</code>
-   * @return Whether the user field is set.
+   * <code>int32 userId = 1 [json_name = "userId"];</code>
+   * @return The userId.
    */
-  boolean hasUser();
+  int getUserId();
+
   /**
-   * <code>.meta.v1.UserDetail user = 1 [json_name = "user"];</code>
-   * @return The user.
+   * <code>string userName = 2 [json_name = "userName"];</code>
+   * @return The userName.
    */
-  com.meta.v1.UserDetail getUser();
+  java.lang.String getUserName();
   /**
-   * <code>.meta.v1.UserDetail user = 1 [json_name = "user"];</code>
+   * <code>string userName = 2 [json_name = "userName"];</code>
+   * @return The bytes for userName.
    */
-  com.meta.v1.UserDetailOrBuilder getUserOrBuilder();
+  com.google.protobuf.ByteString
+      getUserNameBytes();
+
+  /**
+   * <code>string userRole = 3 [json_name = "userRole"];</code>
+   * @return The userRole.
+   */
+  java.lang.String getUserRole();
+  /**
+   * <code>string userRole = 3 [json_name = "userRole"];</code>
+   * @return The bytes for userRole.
+   */
+  com.google.protobuf.ByteString
+      getUserRoleBytes();
 }

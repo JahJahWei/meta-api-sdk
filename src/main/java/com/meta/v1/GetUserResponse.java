@@ -28,6 +28,8 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private GetUserResponse() {
+    userName_ = "";
+    userRole_ = "";
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor
@@ -43,31 +45,93 @@ private static final long serialVersionUID = 0L;
             com.meta.v1.GetUserResponse.class, com.meta.v1.GetUserResponse.Builder.class);
   }
 
-  private int bitField0_;
-  public static final int USER_FIELD_NUMBER = 1;
-  private com.meta.v1.UserDetail user_;
+  public static final int USERID_FIELD_NUMBER = 1;
+  private int userId_ = 0;
   /**
-   * <code>.meta.v1.UserDetail user = 1 [json_name = "user"];</code>
-   * @return Whether the user field is set.
+   * <code>int32 userId = 1 [json_name = "userId"];</code>
+   * @return The userId.
    */
   @java.lang.Override
-  public boolean hasUser() {
-    return ((bitField0_ & 0x00000001) != 0);
+  public int getUserId() {
+    return userId_;
+  }
+
+  public static final int USERNAME_FIELD_NUMBER = 2;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object userName_ = "";
+  /**
+   * <code>string userName = 2 [json_name = "userName"];</code>
+   * @return The userName.
+   */
+  @java.lang.Override
+  public java.lang.String getUserName() {
+    java.lang.Object ref = userName_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      userName_ = s;
+      return s;
+    }
   }
   /**
-   * <code>.meta.v1.UserDetail user = 1 [json_name = "user"];</code>
-   * @return The user.
+   * <code>string userName = 2 [json_name = "userName"];</code>
+   * @return The bytes for userName.
    */
   @java.lang.Override
-  public com.meta.v1.UserDetail getUser() {
-    return user_ == null ? com.meta.v1.UserDetail.getDefaultInstance() : user_;
+  public com.google.protobuf.ByteString
+      getUserNameBytes() {
+    java.lang.Object ref = userName_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      userName_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int USERROLE_FIELD_NUMBER = 3;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object userRole_ = "";
+  /**
+   * <code>string userRole = 3 [json_name = "userRole"];</code>
+   * @return The userRole.
+   */
+  @java.lang.Override
+  public java.lang.String getUserRole() {
+    java.lang.Object ref = userRole_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      userRole_ = s;
+      return s;
+    }
   }
   /**
-   * <code>.meta.v1.UserDetail user = 1 [json_name = "user"];</code>
+   * <code>string userRole = 3 [json_name = "userRole"];</code>
+   * @return The bytes for userRole.
    */
   @java.lang.Override
-  public com.meta.v1.UserDetailOrBuilder getUserOrBuilder() {
-    return user_ == null ? com.meta.v1.UserDetail.getDefaultInstance() : user_;
+  public com.google.protobuf.ByteString
+      getUserRoleBytes() {
+    java.lang.Object ref = userRole_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      userRole_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -84,8 +148,14 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (((bitField0_ & 0x00000001) != 0)) {
-      output.writeMessage(1, getUser());
+    if (userId_ != 0) {
+      output.writeInt32(1, userId_);
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(userName_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 2, userName_);
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(userRole_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 3, userRole_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -96,9 +166,15 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (((bitField0_ & 0x00000001) != 0)) {
+    if (userId_ != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, getUser());
+        .computeInt32Size(1, userId_);
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(userName_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(2, userName_);
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(userRole_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(3, userRole_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -115,11 +191,12 @@ private static final long serialVersionUID = 0L;
     }
     com.meta.v1.GetUserResponse other = (com.meta.v1.GetUserResponse) obj;
 
-    if (hasUser() != other.hasUser()) return false;
-    if (hasUser()) {
-      if (!getUser()
-          .equals(other.getUser())) return false;
-    }
+    if (getUserId()
+        != other.getUserId()) return false;
+    if (!getUserName()
+        .equals(other.getUserName())) return false;
+    if (!getUserRole()
+        .equals(other.getUserRole())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -131,10 +208,12 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    if (hasUser()) {
-      hash = (37 * hash) + USER_FIELD_NUMBER;
-      hash = (53 * hash) + getUser().hashCode();
-    }
+    hash = (37 * hash) + USERID_FIELD_NUMBER;
+    hash = (53 * hash) + getUserId();
+    hash = (37 * hash) + USERNAME_FIELD_NUMBER;
+    hash = (53 * hash) + getUserName().hashCode();
+    hash = (37 * hash) + USERROLE_FIELD_NUMBER;
+    hash = (53 * hash) + getUserRole().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -254,29 +333,21 @@ private static final long serialVersionUID = 0L;
 
     // Construct using com.meta.v1.GetUserResponse.newBuilder()
     private Builder() {
-      maybeForceBuilderInitialization();
+
     }
 
     private Builder(
         com.google.protobuf.GeneratedMessage.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessage
-              .alwaysUseFieldBuilders) {
-        internalGetUserFieldBuilder();
-      }
+
     }
     @java.lang.Override
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
-      user_ = null;
-      if (userBuilder_ != null) {
-        userBuilder_.dispose();
-        userBuilder_ = null;
-      }
+      userId_ = 0;
+      userName_ = "";
+      userRole_ = "";
       return this;
     }
 
@@ -310,14 +381,15 @@ private static final long serialVersionUID = 0L;
 
     private void buildPartial0(com.meta.v1.GetUserResponse result) {
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
-        result.user_ = userBuilder_ == null
-            ? user_
-            : userBuilder_.build();
-        to_bitField0_ |= 0x00000001;
+        result.userId_ = userId_;
       }
-      result.bitField0_ |= to_bitField0_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.userName_ = userName_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.userRole_ = userRole_;
+      }
     }
 
     @java.lang.Override
@@ -332,8 +404,18 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(com.meta.v1.GetUserResponse other) {
       if (other == com.meta.v1.GetUserResponse.getDefaultInstance()) return this;
-      if (other.hasUser()) {
-        mergeUser(other.getUser());
+      if (other.getUserId() != 0) {
+        setUserId(other.getUserId());
+      }
+      if (!other.getUserName().isEmpty()) {
+        userName_ = other.userName_;
+        bitField0_ |= 0x00000002;
+        onChanged();
+      }
+      if (!other.getUserRole().isEmpty()) {
+        userRole_ = other.userRole_;
+        bitField0_ |= 0x00000004;
+        onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -361,13 +443,21 @@ private static final long serialVersionUID = 0L;
             case 0:
               done = true;
               break;
-            case 10: {
-              input.readMessage(
-                  internalGetUserFieldBuilder().getBuilder(),
-                  extensionRegistry);
+            case 8: {
+              userId_ = input.readInt32();
               bitField0_ |= 0x00000001;
               break;
-            } // case 10
+            } // case 8
+            case 18: {
+              userName_ = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000002;
+              break;
+            } // case 18
+            case 26: {
+              userRole_ = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000004;
+              break;
+            } // case 26
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -385,125 +475,180 @@ private static final long serialVersionUID = 0L;
     }
     private int bitField0_;
 
-    private com.meta.v1.UserDetail user_;
-    private com.google.protobuf.SingleFieldBuilder<
-        com.meta.v1.UserDetail, com.meta.v1.UserDetail.Builder, com.meta.v1.UserDetailOrBuilder> userBuilder_;
+    private int userId_ ;
     /**
-     * <code>.meta.v1.UserDetail user = 1 [json_name = "user"];</code>
-     * @return Whether the user field is set.
+     * <code>int32 userId = 1 [json_name = "userId"];</code>
+     * @return The userId.
      */
-    public boolean hasUser() {
-      return ((bitField0_ & 0x00000001) != 0);
+    @java.lang.Override
+    public int getUserId() {
+      return userId_;
     }
     /**
-     * <code>.meta.v1.UserDetail user = 1 [json_name = "user"];</code>
-     * @return The user.
+     * <code>int32 userId = 1 [json_name = "userId"];</code>
+     * @param value The userId to set.
+     * @return This builder for chaining.
      */
-    public com.meta.v1.UserDetail getUser() {
-      if (userBuilder_ == null) {
-        return user_ == null ? com.meta.v1.UserDetail.getDefaultInstance() : user_;
-      } else {
-        return userBuilder_.getMessage();
-      }
-    }
-    /**
-     * <code>.meta.v1.UserDetail user = 1 [json_name = "user"];</code>
-     */
-    public Builder setUser(com.meta.v1.UserDetail value) {
-      if (userBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        user_ = value;
-      } else {
-        userBuilder_.setMessage(value);
-      }
+    public Builder setUserId(int value) {
+
+      userId_ = value;
       bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
     /**
-     * <code>.meta.v1.UserDetail user = 1 [json_name = "user"];</code>
+     * <code>int32 userId = 1 [json_name = "userId"];</code>
+     * @return This builder for chaining.
      */
-    public Builder setUser(
-        com.meta.v1.UserDetail.Builder builderForValue) {
-      if (userBuilder_ == null) {
-        user_ = builderForValue.build();
-      } else {
-        userBuilder_.setMessage(builderForValue.build());
-      }
-      bitField0_ |= 0x00000001;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>.meta.v1.UserDetail user = 1 [json_name = "user"];</code>
-     */
-    public Builder mergeUser(com.meta.v1.UserDetail value) {
-      if (userBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0) &&
-          user_ != null &&
-          user_ != com.meta.v1.UserDetail.getDefaultInstance()) {
-          getUserBuilder().mergeFrom(value);
-        } else {
-          user_ = value;
-        }
-      } else {
-        userBuilder_.mergeFrom(value);
-      }
-      if (user_ != null) {
-        bitField0_ |= 0x00000001;
-        onChanged();
-      }
-      return this;
-    }
-    /**
-     * <code>.meta.v1.UserDetail user = 1 [json_name = "user"];</code>
-     */
-    public Builder clearUser() {
+    public Builder clearUserId() {
       bitField0_ = (bitField0_ & ~0x00000001);
-      user_ = null;
-      if (userBuilder_ != null) {
-        userBuilder_.dispose();
-        userBuilder_ = null;
+      userId_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object userName_ = "";
+    /**
+     * <code>string userName = 2 [json_name = "userName"];</code>
+     * @return The userName.
+     */
+    public java.lang.String getUserName() {
+      java.lang.Object ref = userName_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        userName_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
       }
+    }
+    /**
+     * <code>string userName = 2 [json_name = "userName"];</code>
+     * @return The bytes for userName.
+     */
+    public com.google.protobuf.ByteString
+        getUserNameBytes() {
+      java.lang.Object ref = userName_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        userName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string userName = 2 [json_name = "userName"];</code>
+     * @param value The userName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUserName(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      userName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
     /**
-     * <code>.meta.v1.UserDetail user = 1 [json_name = "user"];</code>
+     * <code>string userName = 2 [json_name = "userName"];</code>
+     * @return This builder for chaining.
      */
-    public com.meta.v1.UserDetail.Builder getUserBuilder() {
-      bitField0_ |= 0x00000001;
+    public Builder clearUserName() {
+      userName_ = getDefaultInstance().getUserName();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
-      return internalGetUserFieldBuilder().getBuilder();
+      return this;
     }
     /**
-     * <code>.meta.v1.UserDetail user = 1 [json_name = "user"];</code>
+     * <code>string userName = 2 [json_name = "userName"];</code>
+     * @param value The bytes for userName to set.
+     * @return This builder for chaining.
      */
-    public com.meta.v1.UserDetailOrBuilder getUserOrBuilder() {
-      if (userBuilder_ != null) {
-        return userBuilder_.getMessageOrBuilder();
+    public Builder setUserNameBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      userName_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object userRole_ = "";
+    /**
+     * <code>string userRole = 3 [json_name = "userRole"];</code>
+     * @return The userRole.
+     */
+    public java.lang.String getUserRole() {
+      java.lang.Object ref = userRole_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        userRole_ = s;
+        return s;
       } else {
-        return user_ == null ?
-            com.meta.v1.UserDetail.getDefaultInstance() : user_;
+        return (java.lang.String) ref;
       }
     }
     /**
-     * <code>.meta.v1.UserDetail user = 1 [json_name = "user"];</code>
+     * <code>string userRole = 3 [json_name = "userRole"];</code>
+     * @return The bytes for userRole.
      */
-    private com.google.protobuf.SingleFieldBuilder<
-        com.meta.v1.UserDetail, com.meta.v1.UserDetail.Builder, com.meta.v1.UserDetailOrBuilder> 
-        internalGetUserFieldBuilder() {
-      if (userBuilder_ == null) {
-        userBuilder_ = new com.google.protobuf.SingleFieldBuilder<
-            com.meta.v1.UserDetail, com.meta.v1.UserDetail.Builder, com.meta.v1.UserDetailOrBuilder>(
-                getUser(),
-                getParentForChildren(),
-                isClean());
-        user_ = null;
+    public com.google.protobuf.ByteString
+        getUserRoleBytes() {
+      java.lang.Object ref = userRole_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        userRole_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
       }
-      return userBuilder_;
+    }
+    /**
+     * <code>string userRole = 3 [json_name = "userRole"];</code>
+     * @param value The userRole to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUserRole(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      userRole_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string userRole = 3 [json_name = "userRole"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearUserRole() {
+      userRole_ = getDefaultInstance().getUserRole();
+      bitField0_ = (bitField0_ & ~0x00000004);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string userRole = 3 [json_name = "userRole"];</code>
+     * @param value The bytes for userRole to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUserRoleBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      userRole_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
     }
 
     // @@protoc_insertion_point(builder_scope:meta.v1.GetUserResponse)

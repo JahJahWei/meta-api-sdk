@@ -42,16 +42,6 @@ public final class MetaProto {
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_meta_v1_BedDetail_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_meta_v1_GetAlertsRequest_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_meta_v1_GetAlertsRequest_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_meta_v1_GetAlertsResponse_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_meta_v1_GetAlertsResponse_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
     internal_static_meta_v1_AnalysisRequest_descriptor;
   static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
@@ -96,11 +86,6 @@ public final class MetaProto {
   static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_meta_v1_GetUserResponse_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_meta_v1_UserDetail_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_meta_v1_UserDetail_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -114,51 +99,42 @@ public final class MetaProto {
       "\022\n\004page\030\001 \001(\005R\004page\022\032\n\010pageSize\030\002 \001(\005R\010p" +
       "ageSize\022\026\n\006deptId\030\003 \001(\005R\006deptId\"9\n\017GetBe" +
       "dsResponse\022&\n\004beds\030\001 \003(\0132\022.meta.v1.BedDe" +
-      "tailR\004beds\"\321\001\n\tBedDetail\022\024\n\005bedId\030\001 \001(\005R" +
-      "\005bedId\022\024\n\005bedNo\030\002 \001(\tR\005bedNo\022 \n\013patientN" +
-      "ame\030\003 \001(\tR\013patientName\022$\n\rpatientGender\030" +
-      "\004 \001(\tR\rpatientGender\022\036\n\npatientAge\030\005 \001(\005" +
-      "R\npatientAge\022\030\n\007disease\030\006 \001(\tR\007disease\022\026" +
-      "\n\006status\030\007 \001(\tR\006status\"Z\n\020GetAlertsReque" +
-      "st\022\022\n\004page\030\001 \001(\005R\004page\022\032\n\010pageSize\030\002 \001(\005" +
-      "R\010pageSize\022\026\n\006deptId\030\003 \001(\005R\006deptId\"A\n\021Ge" +
-      "tAlertsResponse\022,\n\006alerts\030\001 \003(\0132\024.meta.v" +
-      "1.AlertDetailR\006alerts\")\n\017AnalysisRequest" +
-      "\022\026\n\006deptId\030\001 \001(\005R\006deptId\"B\n\020AnalysisResp" +
-      "onse\022\024\n\005inBed\030\001 \001(\005R\005inBed\022\030\n\007freeBed\030\002 " +
-      "\001(\005R\007freeBed\"y\n\013AlertDetail\022\030\n\007alertId\030\001" +
-      " \001(\005R\007alertId\022\024\n\005bedNo\030\002 \001(\tR\005bedNo\022\034\n\ta" +
-      "lertType\030\003 \001(\tR\talertType\022\034\n\talertTime\030\004" +
-      " \001(\tR\talertTime\"c\n\031GetInfusionDevicesReq" +
-      "uest\022\022\n\004page\030\001 \001(\005R\004page\022\032\n\010pageSize\030\002 \001" +
-      "(\005R\010pageSize\022\026\n\006deptId\030\003 \001(\005R\006deptId\"e\n\032" +
-      "GetInfusionDevicesResponse\022G\n\017infusionDe" +
-      "vices\030\001 \003(\0132\035.meta.v1.InfusionDeviceDeta" +
-      "ilR\017infusionDevices\"\275\001\n\024InfusionDeviceDe" +
-      "tail\022\024\n\005bedNo\030\001 \001(\tR\005bedNo\022)\n\005drugs\030\002 \003(" +
-      "\0132\023.meta.v1.DrugDetailR\005drugs\022\030\n\007disease" +
-      "\030\003 \001(\tR\007disease\022\"\n\014infusionTime\030\004 \001(\tR\014i" +
-      "nfusionTime\022&\n\016infusionStatus\030\005 \001(\tR\016inf" +
-      "usionStatus\"@\n\nDrugDetail\022\026\n\006drugId\030\001 \001(" +
-      "\005R\006drugId\022\032\n\010drugName\030\002 \001(\tR\010drugName\"(\n" +
-      "\016GetUserRequest\022\026\n\006userId\030\001 \001(\005R\006userId\"" +
-      ":\n\017GetUserResponse\022\'\n\004user\030\001 \001(\0132\023.meta." +
-      "v1.UserDetailR\004user\"\\\n\nUserDetail\022\026\n\006use" +
-      "rId\030\001 \001(\005R\006userId\022\032\n\010userName\030\002 \001(\tR\010use" +
-      "rName\022\032\n\010userRole\030\003 \001(\tR\010userRole2\367\002\n\013Me" +
-      "taService\022>\n\007GetUser\022\027.meta.v1.GetUserRe" +
-      "quest\032\030.meta.v1.GetUserResponse\"\000\022>\n\007Get" +
-      "Beds\022\027.meta.v1.GetBedsRequest\032\030.meta.v1." +
-      "GetBedsResponse\"\000\022D\n\tGetAlerts\022\031.meta.v1" +
-      ".GetAlertsRequest\032\032.meta.v1.GetAlertsRes" +
-      "ponse\"\000\022A\n\010Analysis\022\030.meta.v1.AnalysisRe" +
-      "quest\032\031.meta.v1.AnalysisResponse\"\000\022_\n\022Ge" +
-      "tInfusionDevices\022\".meta.v1.GetInfusionDe" +
-      "vicesRequest\032#.meta.v1.GetInfusionDevice" +
-      "sResponse\"\000B|\n\013com.meta.v1B\tMetaProtoP\001Z" +
-      "%github.com/jahjah/meta-go-sdk/v1;meta\242\002" +
-      "\003MXX\252\002\007Meta.V1\312\002\007Meta\\V1\342\002\023Meta\\V1\\GPBMe" +
-      "tadata\352\002\010Meta::V1b\006proto3"
+      "tailR\004beds\"\325\001\n\tBedDetail\022\024\n\005bedId\030\001 \001(\005R" +
+      "\005bedId\022\024\n\005bedNo\030\002 \001(\tR\005bedNo\022\032\n\010deviceNo" +
+      "\030\003 \001(\tR\010deviceNo\022 \n\013patientName\030\004 \001(\tR\013p" +
+      "atientName\022$\n\rpatientGender\030\005 \001(\tR\rpatie" +
+      "ntGender\022\036\n\npatientAge\030\006 \001(\005R\npatientAge" +
+      "\022\030\n\007disease\030\007 \001(\tR\007disease\")\n\017AnalysisRe" +
+      "quest\022\026\n\006deptId\030\001 \001(\005R\006deptId\"B\n\020Analysi" +
+      "sResponse\022\024\n\005inBed\030\001 \001(\005R\005inBed\022\030\n\007freeB" +
+      "ed\030\002 \001(\005R\007freeBed\"y\n\013AlertDetail\022\030\n\007aler" +
+      "tId\030\001 \001(\005R\007alertId\022\024\n\005bedNo\030\002 \001(\tR\005bedNo" +
+      "\022\034\n\talertType\030\003 \001(\tR\talertType\022\034\n\talertT" +
+      "ime\030\004 \001(\tR\talertTime\"c\n\031GetInfusionDevic" +
+      "esRequest\022\022\n\004page\030\001 \001(\005R\004page\022\032\n\010pageSiz" +
+      "e\030\002 \001(\005R\010pageSize\022\026\n\006deptId\030\003 \001(\005R\006deptI" +
+      "d\"e\n\032GetInfusionDevicesResponse\022G\n\017infus" +
+      "ionDevices\030\001 \003(\0132\035.meta.v1.InfusionDevic" +
+      "eDetailR\017infusionDevices\"q\n\024InfusionDevi" +
+      "ceDetail\022\024\n\005bedNo\030\001 \001(\tR\005bedNo\022)\n\005drugs\030" +
+      "\002 \003(\0132\023.meta.v1.DrugDetailR\005drugs\022\030\n\007dis" +
+      "ease\030\003 \001(\tR\007disease\"@\n\nDrugDetail\022\026\n\006dru" +
+      "gId\030\001 \001(\005R\006drugId\022\032\n\010drugName\030\002 \001(\tR\010dru" +
+      "gName\"(\n\016GetUserRequest\022\026\n\006userId\030\001 \001(\005R" +
+      "\006userId\"a\n\017GetUserResponse\022\026\n\006userId\030\001 \001" +
+      "(\005R\006userId\022\032\n\010userName\030\002 \001(\tR\010userName\022\032" +
+      "\n\010userRole\030\003 \001(\tR\010userRole2\261\002\n\013MetaServi" +
+      "ce\022>\n\007GetUser\022\027.meta.v1.GetUserRequest\032\030" +
+      ".meta.v1.GetUserResponse\"\000\022>\n\007GetBeds\022\027." +
+      "meta.v1.GetBedsRequest\032\030.meta.v1.GetBeds" +
+      "Response\"\000\022A\n\010Analysis\022\030.meta.v1.Analysi" +
+      "sRequest\032\031.meta.v1.AnalysisResponse\"\000\022_\n" +
+      "\022GetInfusionDevices\022\".meta.v1.GetInfusio" +
+      "nDevicesRequest\032#.meta.v1.GetInfusionDev" +
+      "icesResponse\"\000B|\n\013com.meta.v1B\tMetaProto" +
+      "P\001Z%github.com/jahjah/meta-go-sdk/v1;met" +
+      "a\242\002\003MXX\252\002\007Meta.V1\312\002\007Meta\\V1\342\002\023Meta\\V1\\GP" +
+      "BMetadata\352\002\010Meta::V1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -181,78 +157,60 @@ public final class MetaProto {
     internal_static_meta_v1_BedDetail_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_meta_v1_BedDetail_descriptor,
-        new java.lang.String[] { "BedId", "BedNo", "PatientName", "PatientGender", "PatientAge", "Disease", "Status", });
-    internal_static_meta_v1_GetAlertsRequest_descriptor =
-      getDescriptor().getMessageTypes().get(3);
-    internal_static_meta_v1_GetAlertsRequest_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-        internal_static_meta_v1_GetAlertsRequest_descriptor,
-        new java.lang.String[] { "Page", "PageSize", "DeptId", });
-    internal_static_meta_v1_GetAlertsResponse_descriptor =
-      getDescriptor().getMessageTypes().get(4);
-    internal_static_meta_v1_GetAlertsResponse_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-        internal_static_meta_v1_GetAlertsResponse_descriptor,
-        new java.lang.String[] { "Alerts", });
+        new java.lang.String[] { "BedId", "BedNo", "DeviceNo", "PatientName", "PatientGender", "PatientAge", "Disease", });
     internal_static_meta_v1_AnalysisRequest_descriptor =
-      getDescriptor().getMessageTypes().get(5);
+      getDescriptor().getMessageTypes().get(3);
     internal_static_meta_v1_AnalysisRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_meta_v1_AnalysisRequest_descriptor,
         new java.lang.String[] { "DeptId", });
     internal_static_meta_v1_AnalysisResponse_descriptor =
-      getDescriptor().getMessageTypes().get(6);
+      getDescriptor().getMessageTypes().get(4);
     internal_static_meta_v1_AnalysisResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_meta_v1_AnalysisResponse_descriptor,
         new java.lang.String[] { "InBed", "FreeBed", });
     internal_static_meta_v1_AlertDetail_descriptor =
-      getDescriptor().getMessageTypes().get(7);
+      getDescriptor().getMessageTypes().get(5);
     internal_static_meta_v1_AlertDetail_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_meta_v1_AlertDetail_descriptor,
         new java.lang.String[] { "AlertId", "BedNo", "AlertType", "AlertTime", });
     internal_static_meta_v1_GetInfusionDevicesRequest_descriptor =
-      getDescriptor().getMessageTypes().get(8);
+      getDescriptor().getMessageTypes().get(6);
     internal_static_meta_v1_GetInfusionDevicesRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_meta_v1_GetInfusionDevicesRequest_descriptor,
         new java.lang.String[] { "Page", "PageSize", "DeptId", });
     internal_static_meta_v1_GetInfusionDevicesResponse_descriptor =
-      getDescriptor().getMessageTypes().get(9);
+      getDescriptor().getMessageTypes().get(7);
     internal_static_meta_v1_GetInfusionDevicesResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_meta_v1_GetInfusionDevicesResponse_descriptor,
         new java.lang.String[] { "InfusionDevices", });
     internal_static_meta_v1_InfusionDeviceDetail_descriptor =
-      getDescriptor().getMessageTypes().get(10);
+      getDescriptor().getMessageTypes().get(8);
     internal_static_meta_v1_InfusionDeviceDetail_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_meta_v1_InfusionDeviceDetail_descriptor,
-        new java.lang.String[] { "BedNo", "Drugs", "Disease", "InfusionTime", "InfusionStatus", });
+        new java.lang.String[] { "BedNo", "Drugs", "Disease", });
     internal_static_meta_v1_DrugDetail_descriptor =
-      getDescriptor().getMessageTypes().get(11);
+      getDescriptor().getMessageTypes().get(9);
     internal_static_meta_v1_DrugDetail_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_meta_v1_DrugDetail_descriptor,
         new java.lang.String[] { "DrugId", "DrugName", });
     internal_static_meta_v1_GetUserRequest_descriptor =
-      getDescriptor().getMessageTypes().get(12);
+      getDescriptor().getMessageTypes().get(10);
     internal_static_meta_v1_GetUserRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_meta_v1_GetUserRequest_descriptor,
         new java.lang.String[] { "UserId", });
     internal_static_meta_v1_GetUserResponse_descriptor =
-      getDescriptor().getMessageTypes().get(13);
+      getDescriptor().getMessageTypes().get(11);
     internal_static_meta_v1_GetUserResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_meta_v1_GetUserResponse_descriptor,
-        new java.lang.String[] { "User", });
-    internal_static_meta_v1_UserDetail_descriptor =
-      getDescriptor().getMessageTypes().get(14);
-    internal_static_meta_v1_UserDetail_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-        internal_static_meta_v1_UserDetail_descriptor,
         new java.lang.String[] { "UserId", "UserName", "UserRole", });
     descriptor.resolveAllFeaturesImmutable();
   }

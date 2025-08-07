@@ -57,28 +57,4 @@ public interface InfusionDeviceDetailOrBuilder extends
    */
   com.google.protobuf.ByteString
       getDiseaseBytes();
-
-  /**
-   * <code>string infusionTime = 4 [json_name = "infusionTime"];</code>
-   * @return The infusionTime.
-   */
-  java.lang.String getInfusionTime();
-  /**
-   * <code>string infusionTime = 4 [json_name = "infusionTime"];</code>
-   * @return The bytes for infusionTime.
-   */
-  com.google.protobuf.ByteString
-      getInfusionTimeBytes();
-
-  /**
-   * <code>string infusionStatus = 5 [json_name = "infusionStatus"];</code>
-   * @return The infusionStatus.
-   */
-  java.lang.String getInfusionStatus();
-  /**
-   * <code>string infusionStatus = 5 [json_name = "infusionStatus"];</code>
-   * @return The bytes for infusionStatus.
-   */
-  com.google.protobuf.ByteString
-      getInfusionStatusBytes();
 }

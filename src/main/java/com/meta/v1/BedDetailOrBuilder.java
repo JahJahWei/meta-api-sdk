@@ -29,56 +29,56 @@ public interface BedDetailOrBuilder extends
       getBedNoBytes();
 
   /**
-   * <code>string patientName = 3 [json_name = "patientName"];</code>
+   * <code>string deviceNo = 3 [json_name = "deviceNo"];</code>
+   * @return The deviceNo.
+   */
+  java.lang.String getDeviceNo();
+  /**
+   * <code>string deviceNo = 3 [json_name = "deviceNo"];</code>
+   * @return The bytes for deviceNo.
+   */
+  com.google.protobuf.ByteString
+      getDeviceNoBytes();
+
+  /**
+   * <code>string patientName = 4 [json_name = "patientName"];</code>
    * @return The patientName.
    */
   java.lang.String getPatientName();
   /**
-   * <code>string patientName = 3 [json_name = "patientName"];</code>
+   * <code>string patientName = 4 [json_name = "patientName"];</code>
    * @return The bytes for patientName.
    */
   com.google.protobuf.ByteString
       getPatientNameBytes();
 
   /**
-   * <code>string patientGender = 4 [json_name = "patientGender"];</code>
+   * <code>string patientGender = 5 [json_name = "patientGender"];</code>
    * @return The patientGender.
    */
   java.lang.String getPatientGender();
   /**
-   * <code>string patientGender = 4 [json_name = "patientGender"];</code>
+   * <code>string patientGender = 5 [json_name = "patientGender"];</code>
    * @return The bytes for patientGender.
    */
   com.google.protobuf.ByteString
       getPatientGenderBytes();
 
   /**
-   * <code>int32 patientAge = 5 [json_name = "patientAge"];</code>
+   * <code>int32 patientAge = 6 [json_name = "patientAge"];</code>
    * @return The patientAge.
    */
   int getPatientAge();
 
   /**
-   * <code>string disease = 6 [json_name = "disease"];</code>
+   * <code>string disease = 7 [json_name = "disease"];</code>
    * @return The disease.
    */
   java.lang.String getDisease();
   /**
-   * <code>string disease = 6 [json_name = "disease"];</code>
+   * <code>string disease = 7 [json_name = "disease"];</code>
    * @return The bytes for disease.
    */
   com.google.protobuf.ByteString
       getDiseaseBytes();
-
-  /**
-   * <code>string status = 7 [json_name = "status"];</code>
-   * @return The status.
-   */
-  java.lang.String getStatus();
-  /**
-   * <code>string status = 7 [json_name = "status"];</code>
-   * @return The bytes for status.
-   */
-  com.google.protobuf.ByteString
-      getStatusBytes();
 }
